@@ -1,0 +1,39 @@
+/*********************************************************************************************************************************
+
+					           KEYUR JOSHI
+                                                keyurjos@buffalo.edu
+		                               UB PERSON # - 36508572
+
+**********************************************************************************************************************************/
+
+1]This project implements a simple form of Distance Vector algorithm using Bellman-Ford equation.
+
+2]Usage:-  ./servr -t <topologyfile> -i <timeout>
+
+3]UDP sockets have been used in this project to exchange routing updates between the servers.For simplicity 
+  routing updates are only sent on 'timeout' and when user updates links or asks for and update.
+
+4]The routers listen for routing updates from neighbors and if they dont receive these after 3 timeout intervals
+  then cost link is set to infinity.
+
+5]The links between the neighbors can be disabled by user following which the router will stop listening and sending
+  updates to that neighbor.A link once disabled cannot be enabled again.In such case if possible alternate route 
+  will be calculated.
+
+6]Update command can be used to change link costs between neighbors.
+
+
+7]A crash can be simulated which causes the server to stop listening and sending updates after which it waits
+  for 'exit' command to quit.A server cannot function again once crashed,the program has to be restartd.
+
+8]*The router will automatically display the routing table when updated.If not then display command can be used.
+  The routes are updated but doesnot display sometimes in such cases 'display command' can be used.
+
+9]Packets command gives no of packets received last since command was invoked.
+
+
+10]All command return either a success or a failure message.
+
+11]Exit command can be used to exit the router(server).
+
+
